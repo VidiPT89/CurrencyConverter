@@ -1,12 +1,12 @@
 :root {
-  --bg: #0a0f1f;
-  --card-bg: rgba(30, 41, 59, 0.55);
-  --card-border: rgba(148, 163, 184, 0.18);
-  --accent: #22d3ee;
-  --accent-2: #a78bfa;
-  --accent-dark: #0ea5b7;
-  --text: #e6edf7;
-  --muted: #93a1b8;
+  --bg: #0a0a0f;
+  --card-bg: rgba(49, 65, 88, 0.3);
+  --card-border: rgba(49, 65, 88, 0.55);
+  --accent: #e17100;
+  --accent-2: #ffb900;
+  --accent-dark: #b35800;
+  --text: #e2e8f0;
+  --muted: #90a1b9;
   --danger: #f87171;
   --success: #34d399;
   --radius: 18px;
@@ -75,7 +75,7 @@ body {
   height: 320px;
   top: 40%;
   left: 60%;
-  background: radial-gradient(circle at 50% 50%, #f472b6, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, var(--accent-dark), transparent 70%);
   opacity: 0.25;
   animation: float3 24s ease-in-out infinite;
 }
