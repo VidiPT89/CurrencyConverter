@@ -34,7 +34,9 @@ CurrencyConverter/
 
 ## ▶️ How to Run
 
-Open the project directly in your browser, or serve it locally with:
+The simplest way: just double-click `index.html` (or right-click → **Open with** → your browser). No installation or server needed.
+
+If your browser blocks the live rate request when opened this way, serve the folder locally instead:
 
 ```bash
 python3 -m http.server 8000
