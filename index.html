@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversor de Moedas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+    <span class="orb orb--3"></span>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="app">
+    <header class="app__header">
+      <div class="brand">
+        <span class="brand__icon">💱</span>
+        <div class="brand__text">
+          <h1 data-i18n="title">Conversor de Moedas</h1>
+          <p class="brand__tagline" data-i18n="tagline">Taxas de câmbio em tempo real, sempre à mão</p>
+        </div>
+      </div>
+
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Alterar idioma">
+        <span class="lang-toggle__option" data-lang="pt">PT</span>
+        <span class="lang-toggle__option" data-lang="en">EN</span>
+        <span class="lang-toggle__pill"></span>
+      </button>
+    </header>
+
+    <p id="status" class="status">
+      <span class="status__dot"></span>
+      <span id="status-text" data-i18n="loading">A carregar taxas...</span>
+    </p>
+
+    <main class="card converter-card">
+      <form id="converter-form" class="converter">
+        <div class="field">
+          <label for="amount" data-i18n="amountLabel">Valor</label>
+          <div class="amount-input">
+            <input type="number" id="amount" min="0" step="any" value="1" required inputmode="decimal" />
+          </div>
+        </div>
+
+        <div class="currencies">
+          <div class="field">
+            <label for="from-currency" data-i18n="fromLabel">De</label>
+            <select id="from-currency"></select>
+          </div>
+
+          <button type="button" id="swap-btn" title="Inverter moedas" aria-label="Inverter moedas">
+            <span class="swap-icon">⇄</span>
+          </button>
+
+          <div class="field">
+            <label for="to-currency" data-i18n="toLabel">Para</label>
+            <select id="to-currency"></select>
+          </div>
+        </div>
+
+        <button type="submit" class="convert-btn">
+          <span data-i18n="convertBtn">Converter</span>
+          <span class="convert-btn__shine"></span>
+        </button>
+      </form>
+
+      <div id="result" class="result" hidden>
+        <div class="result__main">
+          <span id="result-amount" class="result__value">0</span>
+        </div>
+        <span id="result-rate" class="result__rate"></span>
+      </div>
+    </main>
+
+    <section class="card history">
+      <div class="history__header">
+        <h2 data-i18n="historyTitle">Histórico de Conversões</h2>
+        <button id="clear-history-btn" class="link-btn" data-i18n="clearBtn">Limpar</button>
+      </div>
+      <ul id="history-list" class="history__list"></ul>
+      <p id="history-empty" class="empty-msg" data-i18n="historyEmpty">Ainda não tens conversões.</p>
+    </section>
+
+    <footer class="app__footer">
+      <p class="footer__credit">
+        <span data-i18n="developedBy">Desenvolvido por</span>
+        <strong>David Arsénio Martins</strong>
+      </p>
+      <div class="footer__links">
+        <a href="https://ividi.dev/" target="_blank" rel="noopener noreferrer">
+          <span class="footer__icon">🌐</span> ividi.dev
+        </a>
+        <span class="footer__divider">·</span>
+        <a href="https://github.com/VidiPT89/" target="_blank" rel="noopener noreferrer">
+          <span class="footer__icon">💻</span> github.com/VidiPT89
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
